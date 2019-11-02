@@ -31,7 +31,11 @@
   } else if ([@"event" isEqualToString:call.method]) {
     [self event:call result:result];
     result(nil);
-  } else {
+  } else if ([@"eventMap" isEqualToString:call.method]) {
+    [self eventMap:call result:result];
+    result(nil);
+  }
+  else {
     result(FlutterMethodNotImplemented);
   }
 }
@@ -102,6 +106,11 @@
   [MobClick event:name label:label];
 
   result(nil);
+}
+
+- (void)eventMap:(FlutterMethodCall*)call result:(FlutterResult)result {
+    [MobClick event:call.arguments[@"name"] attributes:call.arguments[@"map"]];
+    result(nil);
 }
 
 @end
