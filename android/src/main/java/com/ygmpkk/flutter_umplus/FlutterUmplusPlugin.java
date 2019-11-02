@@ -8,6 +8,8 @@ import android.os.Build;
 import android.util.Log;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.commonsdk.UMConfigure;
+import java.util.HashMap;
+import java.util.Map;
 import com.umeng.commonsdk.statistics.common.DeviceConfig;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
