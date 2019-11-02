@@ -66,6 +66,6 @@ class FlutterUmplus {
   /// [eventId]  当前统计的事件ID
   /// [map] 事件的标签属性 多属性
   static Future<Null> eventMap(String name, {Map<String, dynamic> map}) async {
-    _channel.invokeMethod("event", {"name": name, "map": map});
+    _channel.invokeMethod("eventMap", {"name": name, "map": map});
   }
 }
