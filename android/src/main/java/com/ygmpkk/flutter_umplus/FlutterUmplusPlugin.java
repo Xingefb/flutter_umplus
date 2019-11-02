@@ -133,7 +133,7 @@ public class FlutterUmplusPlugin implements MethodCallHandler {
   private  void  eventMap(MethodCall call, Result result) {
     HashMap<String, String> map = new HashMap<String, String>();
     map.putAll((Map<String, String>) call.argument("map"));
-    MobclickAgent.onEvent(activity,(String) call.argument("name"), map);
+    MobclickAgent.onEventObject(activity,(String) call.argument("name"), map);
   }
 
   public static String[] getTestDeviceInfo(Context context) {
