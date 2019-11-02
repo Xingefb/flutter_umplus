@@ -55,6 +55,7 @@ class _MyAppState extends State<MyApp> {
     FlutterUmplus.beginPageView('demo');
     FlutterUmplus.endPageView('demo');
     FlutterUmplus.event('eventName', label: 'eventLabel');
+    FlutterUmplus.eventMap('name', map: {'pid': 12, 'posi': 'number'});
   }
 
   @override

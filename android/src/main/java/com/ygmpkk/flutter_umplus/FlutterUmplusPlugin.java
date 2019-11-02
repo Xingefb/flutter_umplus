@@ -42,6 +42,8 @@ public class FlutterUmplusPlugin implements MethodCallHandler {
       logPageView(call, result);
     } else if (call.method.equals("event")) {
       event(call, result);
+    } else if (call.method.equals("eventMap")) {
+      eventMap(call, result);
     } else {
       result.notImplemented();
     }
@@ -124,6 +126,12 @@ public class FlutterUmplusPlugin implements MethodCallHandler {
       MobclickAgent.onEvent(activity, name, label);
     }
     result.success(null);
+  }
+
+  private  void  eventMap(MethodCall call, Result result) {
+    HashMap<String, String> map = new HashMap<String, String>();
+    map.putAll((Map<String, String>) call.argument("map"));
+    MobclickAgent.onEvent(activity,(String) call.argument("name"), map);
   }
 
   public static String[] getTestDeviceInfo(Context context) {

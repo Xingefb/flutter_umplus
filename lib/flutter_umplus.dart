@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 
 class FlutterUmplus {
-  static const MethodChannel _channel = const MethodChannel('ygmpkk/flutter_umplus');
+  static const MethodChannel _channel =
+      const MethodChannel('ygmpkk/flutter_umplus');
 
   static Future<String> get platformVersion async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
@@ -59,5 +60,12 @@ class FlutterUmplus {
   /// [label] 事件的标签属性
   static Future<Null> event(String name, {String label}) async {
     _channel.invokeMethod("event", {"name": name, "label": label});
+  }
+
+  /// 计数事件统计
+  /// [eventId]  当前统计的事件ID
+  /// [map] 事件的标签属性 多属性
+  static Future<Null> eventMap(String name, {Map<String, dynamic> map}) async {
+    _channel.invokeMethod("event", {"name": name, "map": map});
   }
 }
