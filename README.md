@@ -112,6 +112,13 @@ FlutterUmplus.init(
 FlutterUmplus.event('eventName', label: 'eventLabel');
 ```
 
+多参数埋点
+```
+FlutterUmplus.eventMap('eventName', map: {'eventId':123});
+```
+
+
+
 [仓库地址](https://github.com/ygmpkk/flutter_umplus)
 
 ## LICENSE
